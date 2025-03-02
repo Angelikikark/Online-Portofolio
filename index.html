@@ -32,16 +32,16 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh; /* Full viewport height */
+      min-height: 100vh;
       margin: 0;
       padding: 20px;
-      text-align: center; /* Ensures text is centered */
+      text-align: center;
       background-color: #f4f4f4;
     }
     header,
     section,
     footer {
-      max-width: 800px; /* Limits width for better readability */
+      max-width: 800px;
       width: 100%;
     }
     header {
@@ -132,7 +132,6 @@
       z-index: 999;
     }
 
-    /* Profile Image Glow Effect */
     .profile-image {
       width: 120px;
       height: 120px;
@@ -179,17 +178,21 @@
       transform: scale(1.1);
     }
 
+    #contact {
+      text-align: center;
+    }
+
     #contact p {
       display: flex;
-      gap: 15px;
+      justify-content: center;
       align-items: center;
-      /justify-content: center; /* Center the icons */
+      gap: 15px;
     }
 
     #contact img {
       width: 30px;
       height: 30px;
-      transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+      transition: transform 0.2s ease-in-out;
     }
 
     #contact img:hover {
