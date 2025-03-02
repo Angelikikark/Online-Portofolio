@@ -167,6 +167,23 @@
       background: linear-gradient(45deg, #af4f92, #af4f92);
       transform: scale(1.1);
     }
+
+    #contact p {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      /justify-content: center; /* Center the icons */
+    }
+
+    #contact img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    }
+
+    #contact img:hover {
+      transform: scale(1.2);
+    }
   </style>
 
   <body>
@@ -374,13 +391,36 @@
       <section id="contact">
         <h2>Contact</h2>
         <p>
-          <a href="https://www.linkedin.com/in/angeliki-karkampasi-58341913b/"
-            >LinkedIn</a
+          <a
+            href="https://www.linkedin.com/in/angeliki-karkampasi-58341913b/"
+            target="_blank"
           >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+              width="40"
+              height="40"
+            />
+          </a>
+          <a href="https://github.com/Angelikikark" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              alt="GitHub"
+              width="40"
+              height="40"
+            />
+          </a>
+          <a href="mailto:aggelikikark@gmail.com">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              alt="Email"
+              width="40"
+              height="40"
+            />
+          </a>
         </p>
-        <p><a href="https://github.com/Angelikikark">GitHub</a></p>
-        <p>Email: aggelikikark@gmail.com</p>
       </section>
+
       <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
 
       <footer>
