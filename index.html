@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angeliki Karkampasi | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .dm-serif-text-regular {
+      font-family: "DM Serif Text", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .dm-serif-text-regular-italic {
+      font-family: "DM Serif Text", serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    body {
+      font-family: "DM Serif Text", serif;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #c2a1b2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 20px;
+      margin: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project {
+      margin-top: 10px;
+      padding: 10px;
+      border-left: 4px solid #c2a1b2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #c2a1b2;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .profile-image {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      display: block;
+      margin: 10px auto;
+      object-fit: cover;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+    }
+    .popup button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background: #c2a1b2;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    /* Profile Image Glow Effect */
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: block;
+      margin: 10px auto;
+      object-fit: cover;
+      box-shadow: 0px 0px 15px rgba(194, 161, 178, 0.8);
+      transition: transform 0.3s ease-in-out;
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #af4f92, #af4f92);
+      color: rgb(248, 245, 245);
+      padding: 12px 18px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    #backToTop:hover {
+      background: linear-gradient(45deg, #af4f92, #af4f92);
+      transform: scale(1.1);
+    }
+  </style>
+
+  <body>
+    <body>
+      <div class="popup-overlay" id="popupOverlay"></div>
+      <div class="popup" id="welcomePopup">
+        <h2>Welcome to My Portfolio!</h2>
+        <p>
+          I'm Angeliki Karkampasi, an aspiring front-end developer. Enjoy
+          exploring my work!
+        </p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+
+      <header>
+        <h1>Angeliki Karkampasi</h1>
+        <img
+          src="file:///C:/Users/sgxak/Downloads/Angeliki%20photo.jpg"
+          alt="Angeliki Karkampasi"
+          class="profile-image"
+        />
+
+        <p>
+          Aspiring Front-End Developer | Passionate about AI & Web Development |
+          Problem Solver
+        </p>
+        <nav>
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Welcome to my online portfolio! I am passionate about web development
+          and building interactive, user-friendly experiences. Aspiring
+          Front-End Developer with a strong foundation in HTML, CSS, JavaScript,
+          Python, and AI. Completed multiple projects through SheCodes, gaining
+          hands-on experience in building responsive web applications.
+          Passionate about creating seamless user experiences, problem-solving,
+          and continuous learning. Transitioning from a customer service
+          background, leveraging strong analytical, collaboration, and
+          problem-solving skills to thrive in tech environments.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+          <h3>Weather App</h3>
+          <p>
+            Built a fully responsive weather application using JavaScript, HTML,
+            CSS, and API integration.
+          </p>
+          <a
+            href="https://github.com/Angelikikark/My-weather-application"
+            target="_blank"
+            >GitHub link</a
+          >
+
+          <a
+            href="https://github.com/Angelikikark/My-Ouranos-App"
+            target="_blank"
+            >GitHub link</a
+          >
+          <a href="https://ouranos-app.netlify.app/" target="_blank"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project">
+          <h3>AI Holiday Generator</h3>
+          <p>
+            Built an AI Holiday Generator using JavaScript, HTML, CSS, and AI
+            API integration.
+          </p>
+          <a
+            href="https://github.com/Angelikikark/AI-Holiday-Generator"
+            target="_blank"
+            >GitHub link</a
+          >
+          <a href="https://ai-holiday-generator.netlify.app/" target="_blank"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project">
+          <h3>Quote Generator</h3>
+          <p>Built a Quote Generator using JavaScript, HTML, and CSS.</p>
+          <a
+            href="https://github.com/Angelikikark/Carpe-Diem-Quote-Generator"
+            target="_blank"
+            >GitHub Repo</a
+          >
+          |
+          <a
+            href="https://carpediem-quotegenerator.netlify.app/"
+            target="_blank"
+            >Live Demo</a
+          >
+        </div>
+
+        <div class="project">
+          <h3>Yoga Website</h3>
+          <p>Built a Yoga website with basic HTML and CSS.</p>
+          <a
+            href="https://github.com/Angelikikark/My-Yoga-website"
+            target="_blank"
+            >GitHub link</a
+          >
+          <a href="https://passionforyoga.netlify.app/" target="_blank"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project">
+          <h3>World Clock</h3>
+          <p>Built a World Clock using HTML.</p>
+          <a href="https://github.com/Angelikikark/World-Clock" target="_blank"
+            >GitHub Repo</a
+          >
+          |
+          <a
+            href="https://world-clock-add-on-myproject.netlify.app/"
+            target="_blank"
+            >Live Demo</a
+          >
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript (Front-End Development)</li>
+          <li>Python, AI Platforms, API Integration</li>
+          <li>
+            Git/GitHub, React.js (basic), Debugging, Web Performance
+            Optimization
+          </li>
+          <li>CSS Grid, Flexbox, Bootstrap (Responsive Design)</li>
+          <li>Agile Methodologies, Project Management, Problem-Solving</li>
+          <li>Communication, Collaboration, Attention to Detail, Leadership</li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+          <h3>Front-End Developer (Freelance & Personal Projects)</h3>
+          <p>London | 2024 - Present</p>
+          <ul>
+            <li>
+              Designed and built dynamic, responsive websites using HTML, CSS,
+              and JavaScript.
+            </li>
+            <li>
+              Created interactive web components to enhance user engagement.
+            </li>
+            <li>
+              Developed projects using APIs and GitHub for version control.
+            </li>
+            <li>
+              Implemented AI-based logic in web applications for enhanced
+              functionality.
+            </li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>Post Travel Customer Service Specialist</h3>
+          <p>Loveholidays, London | October 2023 - Present</p>
+          <ul>
+            <li>
+              Provided exceptional customer care and support to clients
+              post-travel.
+            </li>
+            <li>
+              Handled inquiries, compensation claims, and feedback management.
+            </li>
+            <li>
+              Ensured customer satisfaction by delivering prompt and effective
+              solutions.
+            </li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>Sales Advisor</h3>
+          <p>Vodafone, London | March 2020 - October 2023</p>
+          <ul>
+            <li>
+              Assisted clients in selecting tailored products and services.
+            </li>
+            <li>Managed sales targets and operational KPIs.</li>
+            <li>
+              Provided technical support and guidance regarding mobile
+              communications.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          <a href="https://www.linkedin.com/in/angeliki-karkampasi-58341913b/"
+            >LinkedIn</a
+          >
+        </p>
+        <p><a href="https://github.com/Angelikikark">GitHub</a></p>
+        <p>Email: aggelikikark@gmail.com</p>
+      </section>
+      <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
+      <footer>
+        <p>© 2025 Coded by Angeliki Karkampasi</p>
+      </footer>
+
+      <script>
+        window.onload = function () {
+          document.getElementById("popupOverlay").style.display = "block";
+          document.getElementById("welcomePopup").style.display = "block";
+        };
+        function closePopup() {
+          document.getElementById("popupOverlay").style.display = "none";
+          document.getElementById("welcomePopup").style.display = "none";
+        }
+
+        function filterProjects(category) {
+          let projects = document.querySelectorAll(".project");
+          projects.forEach((project) => {
+            if (category === "all" || project.classList.contains(category)) {
+              project.classList.remove("hidden");
+            } else {
+              project.classList.add("hidden");
+            }
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll("section");
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+
+          sections.forEach((section) => {
+            observer.observe(section);
+          });
+        });
+
+        window.onscroll = function () {
+          let btn = document.getElementById("backToTop");
+          if (document.documentElement.scrollTop > 200) {
+            btn.style.display = "block";
+          } else {
+            btn.style.display = "none";
+          }
+        };
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+            if (name && email && message) {
+              document.getElementById("formMessage").innerText =
+                "Thank you for your message!";
+            } else {
+              document.getElementById("formMessage").innerText =
+                "Please fill out all fields.";
+            }
+          });
+      </script>
+    </body>
+  </body>
+</html>
