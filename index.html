@@ -197,9 +197,48 @@ nav ul li button:hover {
     }
 
     #contact {
-      text-align: center;
-    }
+       display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 
+    }
+.contact h2 {
+  font-size: 24px; 
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  max-width: 100%;
+  width: 90%; 
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px; 
+}
+
+.contact-info a:hover {
+  background-color: #45a049;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  font-size: 20px;
+}
     #contact p {
       display: flex;
       justify-content: center;
