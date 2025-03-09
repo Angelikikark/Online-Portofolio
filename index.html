@@ -301,21 +301,21 @@ button:focus {
   margin:0 auto;
 }
 
- @media (max-width: 768px) {
-body{font-size:16px;}
-.container{padding:10px;}
-  .contact-info {
-    width: 100%; 
-    right:0;
-    margin-left:auton;
-    
-.contact-button{
-  width:100%;
-  max-width:200px;
-    margin:0 auto;}
-
+@media (max-width: 768px) {
+  .navigation-menu {
+    background-color: purple;
+    padding: 10px 20px; /* Adjust padding if needed */
+    width: 100%; /* Adjust width if needed */
+    text-align: center; /* Ensure it's centered */
   }
-
+}
+#navigation-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
   #user-input {
     width: 100%; 
   }
@@ -336,7 +336,7 @@ body{font-size:16px;}
     padding: 8px 12px;
   }
 
-}
+
 
   </style>
 
@@ -366,13 +366,13 @@ body{font-size:16px;}
           Problem Solver
         </p>
         <nav>
-          <ul>
-            <li><button onclick="location.href='#about'">About Me</button></li>
-         <li><button onclick="location.href='#projects'">Projects</button></li>
+          <ul id="navigation-menu">
+    <li><button onclick="location.href='#about'">About Me</button></li>
+    <li><button onclick="location.href='#projects'">Projects</button></li>
     <li><button onclick="location.href='#skills'">Skills</button></li>
     <li><button onclick="location.href='#experience'">Experience</button></li>
     <li><button onclick="location.href='#contact'">Contact</button></li>
-          </ul>
+</ul>
         </nav>
       </header>
 
