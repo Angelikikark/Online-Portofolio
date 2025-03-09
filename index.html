@@ -50,21 +50,36 @@
       text-align: center;
       padding: 20px;
     }
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Keep the same alignment */
+}
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
+nav ul li {
+  display: inline;
+  margin: 0 15px; /* Maintain spacing */
+}
 
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+nav ul li button {
+  background-color: #af4f92;
+  color: white;
+  border: none;
+  padding: 10px 20px;  
+  cursor: pointer;
+  font: size 13px;
+  border-radius: 10px; 
+  text-transform: uppercase; 
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
+nav ul li button:hover {
+  background-color: #af4f92;
+  transform: scale(1.08); 
+}
+
 
     section {
       padding: 20px;
@@ -235,31 +250,25 @@ button:focus {
 
 
   #user-input {
-    width: 60%; /* Reduce input width on smaller screens */
+    width: 60%; 
   }
 
   button {
-    font-size: 10px; /* Smaller buttons on mobile */
+    font-size: 10px; 
     padding: 10px 15px;
   }
 
 
-@media screen and (max-width: 480px) {
-  #chatbox {
-    width: 95%; /* Chatbox will take up almost the whole screen width on very small screens */
-    bottom: 10px;
-    right: 5px;
-  }
 
   #user-input {
-    width: 70%; /* Slightly bigger input for small screens */
+    width: 70%; 
   }
 
   button {
     font-size: 10px;
     padding: 8px 12px;
   }
-}
+
 
   </style>
 
@@ -290,11 +299,11 @@ button:focus {
         </p>
         <nav>
           <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><button onclick="location.href='#about'">About Me</button></li>
+         <li><button onclick="location.href='#projects'">Projects</button></li>
+    <li><button onclick="location.href='#skills'">Skills</button></li>
+    <li><button onclick="location.href='#experience'">Experience</button></li>
+    <li><button onclick="location.href='#contact'">Contact</button></li>
           </ul>
         </nav>
       </header>
